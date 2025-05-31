@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diagonal Image Cut</title>
+  <style>
+    .diagonal-image {
+      width: 400px;
+      height: 300px;
+      overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+      /* This makes a bottom-left to top-right diagonal cut */
+    }
+
+    .diagonal-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="diagonal-image">
+  <img src="Images/20200104_140213680-1.jpg" alt="Diagonal Cut Image">
+</div>
+
+</body>
+</html>

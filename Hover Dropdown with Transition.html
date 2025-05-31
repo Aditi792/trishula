@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://127.0.0.1:5500/demo.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Hover Dropdown with Transition</title>
+  <style>
+    .dropdown-container {
+      width: 150px;
+      margin: 50px auto;
+      position: relative;
+      cursor: pointer;
+      font-family: sans-serif;
+    }
+
+    /* .dropdown-header {
+      background-color: #3498db;
+      color: white;
+      padding: 12px;
+      border-radius: 5px;
+    } */
+
+    .dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      background-color: #ecf0f1;
+      transition: max-height 0.6s ease;
+      border-radius: 0 0 5px 5px;
+      padding: 0 12px;
+    }
+
+    .dropdown-container:hover .dropdown-content {
+      max-height: 200px; /* Adjust based on content */
+      padding: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="dropdown-container">
+  <div class="dropdown-header">
+    Hover Me ▼
+  </div>
+  <div class="dropdown-content">
+    <p>This dropdown opens smoothly when you hover over it.</p>
+    <p>You can put any content here.</p>
+  </div>
+</div>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
