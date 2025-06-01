@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .image-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 300px; /* adjust as needed */
+  height: 200px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s ease-in;
+}
+
+.image-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 0.6s ease;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.icon1,
+.icon2 {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.icon1:hover,
+.icon2:hover {
+  transform: scale(1.2);
+}
+
+    </style>
+</head>
+<body>
+    <div class="image-container">
+  <img src="./Images/crew-1-1024x520-1024x520.jpg" alt="Sample" />
+  <div class="overlay">
+    <i class="icon1">🔍</i>
+    <i class="icon2">❤️</i>
+  </div>
+</div>
+
+</body>
+</html>
