@@ -118,6 +118,8 @@ zoomNext.addEventListener('click', () => {
 });
 
 
+
+//carousel content
   const slidess = document.querySelectorAll('.carousel-slide');
   const tracks = document.querySelector('.carousel-track');
   const prevBtn = document.querySelector('.carousel-button.prev');
@@ -166,3 +168,26 @@ zoomNext.addEventListener('click', () => {
 
   // Initialize
   window.addEventListener('load', updateSlide);
+
+
+
+
+  const slideContainers = document.querySelector('.slide-container');
+  const btnLeft = document.querySelector('.button.left');
+  const btnRight = document.querySelector('.button.right');
+
+  const scrollAmount = 800; // adjust this as needed
+
+  btnRight.addEventListener('click', () => {
+    slideContainers.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+
+  btnLeft.addEventListener('click', () => {
+    slideContainers.scrollBy({
+      left: -scrollAmount,
+      behavior: 'smooth'
+    });
+  });

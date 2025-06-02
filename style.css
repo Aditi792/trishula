@@ -297,12 +297,12 @@ ul > li > a.active {
 
   .carousel-text-left {
     font-size: 1.2rem;
-    top: 30%;
+    top: 40%;
   }
 
   .carousel-text-right {
     font-size: 0.9rem;
-    top: 45%;
+    top: 55%;
   }
 }
 
@@ -348,6 +348,13 @@ ul > li > a.active {
   font-size: 20px;
 }
 
+
+@media (max-width: 768px) {
+  .services-section h2{
+    padding-left: 10%;
+  }
+  
+}
 .services-section h2::after {
   content: "";
   position: absolute;
@@ -543,6 +550,7 @@ transform: translateY(0px);
 }
 .home-content > p{
   padding: 20px;
+  text-align: justify;
 }
 
 
@@ -696,7 +704,7 @@ font-size: 15px;
   gap: 20px;
   width: max-content;
   margin: 15px 0px;
-  animation: scroll 20s linear infinite;
+  animation: scroll 30s linear infinite;
 }
 
 @keyframes scroll {
@@ -706,6 +714,16 @@ font-size: 15px;
   100% {
     transform: translateX(calc(-250px * 5));
   }
+}
+
+.scroll-images {
+  width: 85%;
+  overflow: hidden; /* ok */
+}
+
+.slide-container {
+  overflow-x: auto; /* allows horizontal scroll */
+  white-space: nowrap; /* ensures horizontal alignment */
 }
 
 .slide-img {
@@ -784,8 +802,9 @@ font-size: 15px;
   margin-top: 20px;
 }
 
-.scroll-button button {
+.scroll-button .button {
   margin-right: 15px;
+  pointer-events: all;
 }
 
 .button {
@@ -802,6 +821,9 @@ font-size: 15px;
   background-color: #982a1c;
   color: #FFF;
 }
+
+
+
 
 
 /* zoom */
