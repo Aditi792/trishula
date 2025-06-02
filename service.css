@@ -1,9 +1,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-.image{
+.image {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.image img{
     width: 100%;
     object-fit: cover;
+    display: block;
     box-sizing: border-box;
 }
 
@@ -33,6 +40,7 @@
 .service-page-card{
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -60,7 +68,7 @@
   position: relative; 
   cursor: pointer;
   padding: 5px;
-    border: 1px solid #a0a0a0;
+  border: 1px solid #a0a0a0;
 }
 
 /* Overlay only on image */
@@ -132,6 +140,7 @@
     background-color: #B83940;
     color: #FFF;
     padding: 30px 80px;
+    text-align: justify;
 }
 
 .service-about h3{

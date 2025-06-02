@@ -1,3 +1,16 @@
+  
+  //navbar
+  const toggle = document.getElementById('menu-toggle');
+  const navbar = document.getElementById('navbar');
+
+  toggle.addEventListener('click', () => {
+    console.log("clicked");
+    navbar.classList.toggle('active');
+  });
+    
+    
+    
+    
     
     //active window
     
@@ -105,3 +118,51 @@ zoomNext.addEventListener('click', () => {
 });
 
 
+  const slidess = document.querySelectorAll('.carousel-slide');
+  const tracks = document.querySelector('.carousel-track');
+  const prevBtn = document.querySelector('.carousel-button.prev');
+  const nextBtn = document.querySelector('.carousel-button.next');
+  const leftText = document.querySelector('.carousel-text-left');
+  const rightText = document.querySelector('.carousel-text-right');
+
+  const texts = [
+    { left: "COMMITMENT, INTEGRITY, RESULT", right: "SMPL MEANS CREDIBILITY REDEFINED" },
+    { left: "WE TRUST YOUR TRUST IN US", right: "Trishula MARITIME PVT. LTD." },
+    { left: "COMMITMENT", right: "STONGLY DEDICATED TO MEET CLIENTS EXPECTATION" },
+    { left: "INTEGRITY", right: "Driven by principles and a genuine moral code" },
+    { left: "RESULT", right: "Constant endeavour for desired output" },
+  ];
+
+  let currIndex = 0;
+
+  function updateSlide() {
+    const slideWidth = slidess[0].clientWidth;
+    tracks.style.transform = `translateX(-${currIndex * slideWidth}px)`;
+
+    // Remove previous animations
+    leftText.style.animation = 'none';
+    rightText.style.animation = 'none';
+    void leftText.offsetWidth; // Trigger reflow
+    void rightText.offsetWidth;
+
+    // Update text
+    leftText.textContent = texts[currIndex].left;
+    rightText.textContent = texts[currIndex].right;
+
+    // Trigger animations again
+    leftText.style.animation = 'slideInLeft 1s forwards';
+    rightText.style.animation = 'slideInRight 1s forwards';
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currIndex = (currIndex + 1) % slidess.length;
+    updateSlide();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currIndex = (currIndex - 1 + slidess.length) % slidess.length;
+    updateSlide();
+  });
+
+  // Initialize
+  window.addEventListener('load', updateSlide);
